@@ -1,0 +1,15 @@
+
+SinglyLinkedListNode* insertNodeAtPosition(SinglyLinkedListNode* head, int data, int position) {
+     struct SinglyLinkedListNode *ptr,*temp;
+    temp=(struct SinglyLinkedListNode*) malloc(sizeof(struct SinglyLinkedListNode));
+    temp->data= data;
+    temp->next= NULL;
+    ptr=head;
+    while(position !=1){
+        ptr=ptr->next;
+        position--;
+    }
+    temp->next=ptr->next;
+    ptr->next=temp; 
+    return head;
+   
